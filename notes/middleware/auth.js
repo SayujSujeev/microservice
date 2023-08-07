@@ -2,6 +2,8 @@ const jwt = require("jsonwebtoken");
 
 function authenticate(req, res, next) {
   const token = req.header("Authorization");
+  console.log(token);
+  console.log(process.env.JWT_SECRET);
 
   if (!token) {
     return res
@@ -15,6 +17,7 @@ function authenticate(req, res, next) {
     next(); // Pass control to the next middleware function
   } catch (err) {
     res.status(400).json({ message: "Invalid token." });
+    console.log(err);
   }
 }
 

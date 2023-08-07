@@ -19,6 +19,7 @@ router.post("/login", async (req, res) => {
   }
 
   const token = generateToken(user);
+  console.log(token);
   res.json({ token });
 });
 

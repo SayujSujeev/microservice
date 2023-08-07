@@ -6,6 +6,8 @@ const cors = require("cors");
 const notesRouter = require("./routes/notes");
 const authenticate = require("./middleware/auth");
 
+require("dotenv").config();
+
 mongoose
   .connect("mongodb://0.0.0.0:27017/login", {
     useNewUrlParser: true,
